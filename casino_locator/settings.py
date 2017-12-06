@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #once installed postgis add this
+    'django.contrib.gis',
+    ##
     'rest_framework',
     'corsheaders',
     'casino_finder'
@@ -79,8 +82,11 @@ WSGI_APPLICATION = 'casino_locator.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'casino_locator',
+        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #once installed postgis add this
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        #
+        'NAME': 'casino_locator_base',
         'USER': 'aravinda',
         'PASSWORD': 'aravinda',
         'HOST': 'localhost',
